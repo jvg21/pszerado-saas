@@ -32,8 +32,8 @@ export const ChatInterface = ({
   }
 
   return (
-    <div className="flex flex-col h-screen bg-white">
-      {/* Header */}
+    <div className="flex flex-col h-full bg-white">
+      {/* Header - altura fixa */}
       <div className="flex-shrink-0 border-b border-gray-200 bg-white">
         <div className="flex items-center justify-between px-6 py-4">
           <div>
@@ -70,8 +70,8 @@ export const ChatInterface = ({
         </div>
       </div>
 
-      {/* Messages */}
-      <div className="flex-1 overflow-hidden">
+      {/* Messages - área scrollável independente */}
+      <div className="flex-1 min-h-0 overflow-y-auto scrollbar-thin">
         <MessageList 
           messages={messages} 
           isLoading={isLoading}
@@ -79,7 +79,7 @@ export const ChatInterface = ({
         />
       </div>
 
-      {/* Input */}
+      {/* Input - altura fixa */}
       <div className="flex-shrink-0 border-t border-gray-200 bg-white">
         <MessageInput 
           onSendMessage={onSendMessage}

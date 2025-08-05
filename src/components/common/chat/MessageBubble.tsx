@@ -6,7 +6,7 @@ interface MessageBubbleProps {
   isLast: boolean;
 }
 
-export const MessageBubble = ({ message, isLast }: MessageBubbleProps) => {
+export const MessageBubble = ({ message }: MessageBubbleProps) => {
   const [copied, setCopied] = useState(false);
   const isUser = message.message.type === 'human';
 

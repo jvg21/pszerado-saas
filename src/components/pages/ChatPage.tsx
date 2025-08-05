@@ -1,6 +1,6 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { chatService } from "../../services/chatService";
-import type { Chat, ChatMessage, Message } from "../../types/types";
+import type { Chat, ChatMessage} from "../../types/types";
 
 export const ChatPage = () => {
     const [inputText, setInputText] = useState<string>(''); // State for the input field
@@ -82,7 +82,7 @@ export const ChatPage = () => {
 
     const handleDeleteChat = async (chatId: number) => {
         const ChatService = new chatService();
-        const response = await ChatService.deleteChat(chatId);
+        await ChatService.deleteChat(chatId);
 
          const fetchChats = async () => {
             const ChatService = new chatService();

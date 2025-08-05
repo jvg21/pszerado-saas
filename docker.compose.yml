@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+  pszerado:
+    image: jvg21/pszerado:latest
+    restart: always
+    environment:
+      - PORT=3015
+      - NODE_ENV=production
+      - VITE_SUPABASE_URL=${VITE_SUPABASE_URL}
+      - VITE_SUPABASE_ANON_KEY=${VITE_SUPABASE_ANON_KEY}
+      - VITE_SUPABASE_SERVICE_ROLE_KEY=${VITE_SUPABASE_SERVICE_ROLE_KEY}
+      - VITE_SCHEMA=${VITE_SCHEMA}
+      - VITE_N8N_WEBHOOK_URL=${VITE_N8N_WEBHOOK_URL}
+      - VITE_N8N_WEBHOOK_KEY=${VITE_N8N_WEBHOOK_KEY}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.pszerado.rule=Host(`pszerado.armtexai.org`)"
+      - "traefik.http.routers.pszerado.entrypoints=websecure"
+      - "traefik.http.routers.pszerado.tls=true"
+      - "traefik.http.routers.pszerado.tls.certresolver=letsencryptresolver"
+      - "traefik.http.services.pszerado.loadbalancer.server.port=3015"
+      # Redirect HTTP to HTTPS
+      - "traefik.http.routers.pszerado-http.rule=Host(`pszerado.armtexai.org`)"
+      - "traefik.http.routers.pszerado-http.entrypoints=web"
+      - "traefik.http.routers.pszerado-http.middlewares=redirect-to-https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+    networks:
+      - traefik_proxy
+      - armtexai
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+networks:
+  traefik_proxy:
+    external: true
+    name: traefik_proxy
+  armtexai:
+    external: true
+    name: armtexai
