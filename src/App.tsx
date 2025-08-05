@@ -1,11 +1,11 @@
 import './App.css'
-import { ChatPage } from './components/pages/ChatPage'
+import { ChatLayout } from './components/common/layout/ChatLayout'
 
 function App() {
 
   return (
     <>
-    <ChatPage />
+    <ChatLayout />
     </>
      
   )
