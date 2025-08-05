@@ -30,7 +30,7 @@ export const Sidebar = ({
   };
 
   return (
-    <div className={`fixed left-0 top-0 h-full bg-gray-900 text-white transition-all duration-300 z-10 ${
+    <div className={`fixed left-0 top-0 h-full bg-ps-red text-white transition-all duration-300 z-10 ${
       collapsed ? 'w-16' : 'w-80'
     }`}>
       {/* Header */}
@@ -65,8 +65,8 @@ export const Sidebar = ({
         <button
           onClick={handleAddChat}
           disabled={isCreating}
-          className={`w-full flex items-center justify-center gap-3 px-4 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors disabled:opacity-50 ${
-            collapsed ? 'px-3' : ''
+          className={`w-full flex items-center justify-center gap-3 px-4 py-3 bg-ps-red-dark hover:bg-ps-red-darker rounded-lg transition-colors disabled:opacity-50 ${
+            collapsed ? 'px-3' : 'px-3'
           }`}
           title="Nova conversa"
         >
@@ -112,8 +112,8 @@ export const Sidebar = ({
 
       {/* Footer */}
       {!collapsed && (
-        <div className="p-4 border-t border-gray-700">
-          <div className="text-xs text-gray-400 text-center">
+        <div className="p-4 border-t border-white-700">
+          <div className="text-xs text-white-400 text-center">
             Chat AI Assistant
           </div>
         </div>

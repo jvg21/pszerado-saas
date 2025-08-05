@@ -41,8 +41,8 @@ export const ChatItem = ({ chat, isSelected, onSelect, onDelete, collapsed }: Ch
       onClick={onSelect}
       className={`group relative flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-all duration-200 ${
         isSelected 
-          ? 'bg-gray-700 border border-gray-600' 
-          : 'hover:bg-gray-800 border border-transparent'
+          ? 'bg-ps-red-dark border border-white-600' 
+          : 'hover:bg-ps-red-dark border border-transparent'
       } ${collapsed ? 'justify-center' : ''}`}
       title={collapsed ? chat.name : ''}
     >

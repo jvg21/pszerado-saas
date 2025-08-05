@@ -13,6 +13,10 @@ export default {
         'sidebar-dark': '#171717',
         'message-user': '#f7f7f8',
         'message-ai': '#ffffff',
+
+        'ps-red':'#FF1B2F',
+        'ps-red-dark':'#86000bff',
+        'ps-red-darker':'#4e0006ff',
       },
       animation: {
         'pulse-slow': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
