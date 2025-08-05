@@ -87,13 +87,13 @@ export class chatService {
         return response;
     }
 
-    async deleteMessage(chatId, messageId) {
-        // Delete a message from a specific chat in supabase
-        return {}
-    }
+    // async deleteMessage(chatId, messageId) {
+    //     // Delete a message from a specific chat in supabase
+    //     return {}
+    // }
 
-    async updateMessage(chatId, messageId, newMessage) {
-        // Update a message in a specific chat in supabase
-        return {}
-    }
+    // async updateMessage(chatId, messageId, newMessage) {
+    //     // Update a message in a specific chat in supabase
+    //     return {}
+    // }
 }
